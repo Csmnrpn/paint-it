@@ -11,24 +11,28 @@
 }
 
 .canvasContainer {
-    display:flex;
-    margin: 0 auto;
+    display:grid;
+    grid-template: repeat(20, 1fr) / repeat(20, 1fr);
+    width: 600px;
+    height: 600px;
     border: 1px solid black;
-    flex-wrap: wrap;
-    width: 322px;
 }
 
 .canvasSquares {
-    border: 1px solid black;
-    height: 20px;
-    width: 20px;
+    background-color:gray;
 }
 
 .red {
     background-color: red;
+    border: 1px solid orange;
 }
 
-.clearButton {
+.blue {
+    background-color: blue;
+}
+
+.clearButton,
+.sizeButton {
     padding: 10px;
     margin: 20px;
 }
