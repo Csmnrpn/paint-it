@@ -1,8 +1,35 @@
+//===================================================================================
+// DOM Selection
+
 const canvasContainer = document.querySelector('.canvasContainer');
 const clearButton = document.querySelector('.clearButton');
 const sizeButton = document.querySelector('.sizeButton');
+const sizeSlider = document.querySelector('.sizeSlider');
+const currentSize = document.querySelector('.currentSize');
+const springColor = document.querySelector('.springColor');
+const summerColor = document.querySelector('.summerColor');
+const autumnColor = document.querySelector('.autumnColor');
+const winterColor = document.querySelector('.winterColor');
+const blackColor = document.querySelector('.blackColor');
+const whiteColor = document.querySelector('.whiteColor');
 
-let size = 10;
+//===================================================================================
+// Variables
+
+const springColorPalette = ['#ee808e', '#eeaad0', '#9ad0f9', '#7fe384', '#fff1a1'];
+const summerColorPalette = ['#fff741', '#ffce00', '#ea9900', '#a3bd21', '#009991'];
+const autumnColorPalette = ['#44281d', '#553122', '#625d48', '#3e251e', '#654629'];
+const winterColorPalette = ['#4ed3ff', '#00b3ff', '#7a9bff', '#3dedff', '#13b6de'];
+
+//===================================================================================
+// Initial Game Board
+
+currentSize.innerText = `${sizeSlider.value*sizeSlider.value} squares`;
+let size = sizeSlider.value;
+createCanvas(size);
+
+//===================================================================================
+// Helper Functions
 
 function createCanvas(size) {
     canvasContainer.style.gridTemplate = `repeat(${size}, 1fr) / repeat(${size}, 1fr)`;
@@ -11,43 +38,79 @@ function createCanvas(size) {
         div.classList.add('canvasSquares');
         canvasContainer.appendChild(div);
     }
-    
 }
 
-createCanvas(size);
-
-let canvasSquares = document.querySelectorAll('.canvasSquares');
-
-function canvasRed() {
+function paintItBlack() {
     canvasSquares.forEach(square => {
         square.addEventListener ('mouseover', function(){
-            square.classList.add('red');
+            square.style.backgroundColor = 'black';
         })});
 }
 
-canvasRed();
+let canvasSquares = document.querySelectorAll('.canvasSquares');
+paintItBlack();
 
-sizeButton.addEventListener('click', function() {
-    size = Number(prompt("Please enter the size of the canvas. (max: 100px)"));
+function getRandomColor(color) {
+    let randomColor = Math.floor(Math.random() * color.length);
+    return color[randomColor];
+}
 
+//===================================================================================
+// Game Logic
+
+sizeSlider.addEventListener('click', function(){
     canvasSquares.forEach(square => {
         square.remove();
     })
-    createCanvas(size);
-
+    createCanvas(sizeSlider.value);
+    currentSize.innerText = `${sizeSlider.value*sizeSlider.value} squares`;
     canvasSquares = document.querySelectorAll('.canvasSquares');
-
-    canvasRed();
+    paintItBlack();
 })
-
 
 clearButton.addEventListener('click', function(){
     canvasSquares.forEach(square => {
-        square.classList.remove('red');
+        square.style.backgroundColor = '#F0F0D1';
     })
 });
 
+springColor.addEventListener('click', function(){
+    canvasSquares.forEach(square => {
+        square.addEventListener ('mouseover', function(){
+            square.style.backgroundColor = getRandomColor(springColorPalette);
+        })});
+});
 
+summerColor.addEventListener('click', function(){
+    canvasSquares.forEach(square => {
+        square.addEventListener ('mouseover', function(){
+            square.style.backgroundColor = getRandomColor(summerColorPalette);
+        })});
+});
 
+autumnColor.addEventListener('click', function(){
+    canvasSquares.forEach(square => {
+        square.addEventListener ('mouseover', function(){
+            square.style.backgroundColor = getRandomColor(autumnColorPalette);
+        })});
+});
 
+winterColor.addEventListener('click', function(){
+    canvasSquares.forEach(square => {
+        square.addEventListener ('mouseover', function(){
+            square.style.backgroundColor = getRandomColor(winterColorPalette);
+        })});
+});
 
+blackColor.addEventListener('click', function(){
+    canvasSquares.forEach(square => {
+        square.addEventListener ('mouseover', function(){
+            square.style.backgroundColor = 'black';}
+        )
+    })})
+  
+whiteColor.addEventListener('click', function(){
+    canvasSquares.forEach(square => {
+        square.addEventListener ('mouseover', function(){
+            square.style.backgroundColor = '#F0F0D1';
+        })});});    

@@ -9,11 +9,23 @@
 </head>
 <body>
     <main class='mainContainer'>
-        <button class='clearButton'>Clean Canvas</button>
-        <button class='sizeButton'>Pick Size</button>
-        <div class='canvasContainer'>
-
+        
+        <div class="slideContainer">
+            <label for="sizeSlider">Pick Canvas Size</label>
+            <input type="range" min="2" max="100" value="25" class="sizeSlider" name="sizeSlider">
+            <p class='currentSize'></p>
         </div>
+        <div class="colors">
+            <p>Choose paint</p>
+            <button class="springColor">Spring</button>
+            <button class="summerColor">Summer</button>
+            <button class="autumnColor">Autumn</button>
+            <button class="winterColor">Winter</button>    
+            <button class="blackColor">Black</button>
+            <button class="whiteColor">Eraser</button>
+            <button class='clearButton'>Clean Canvas</button>
+        </div>
+        <div class='canvasContainer'></div>    
     </main>    
         
 <script src='assets/js/script.js'></script>    
