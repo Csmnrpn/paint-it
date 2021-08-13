@@ -9,14 +9,15 @@
 </head>
 <body>
     <main class='mainContainer'>
+        <h1>Paint-it</h1>
         
-        <div class="slideContainer">
-            <label for="sizeSlider">Pick Canvas Size</label>
-            <input type="range" min="2" max="100" value="25" class="sizeSlider" name="sizeSlider">
-            <p class='currentSize'></p>
-        </div>
         <div class="colors">
-            <p>Choose paint</p>
+            <div class="slideContainer">
+                <label for="sizeSlider" class='sliderLabel'>Pick Canvas Size</label>
+                <input type="range" min="2" max="100" value="25" class="sizeSlider" name="sizeSlider">
+                <p class='currentSize'></p>
+            </div>
+            <p class='choosePaintText'>Choose paint</p>
             <button class="springColor">Spring</button>
             <button class="summerColor">Summer</button>
             <button class="autumnColor">Autumn</button>

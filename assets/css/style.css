@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color:  	#eef4ed;
+    color: #2a2b2a;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+}
 .mainContainer {
     display:flex;
     flex-direction:row;
@@ -11,28 +20,71 @@
     width:900px;
     margin: 0 auto;
     height: calc(100vh - 50px);
+    justify-content: space-around;
 
 }
 
 .slideContainer {
-    width: 900px;
-    border: 1px solid black;
+    width: 190px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
-.slideContainer *{
-    border: 1px solid black;
+.sliderLabel{
+    text-align: center;
+    font-size:16px;
+    height:25px;
 }
+
+.sizeSlider {
+    appearance: none;
+    border-radius: 5px;
+    border: none;
+    width: 190px;
+    height: 15px;
+    background: #8da9c4;
+    outline:none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.sizeSlider:hover {
+    opacity:1;
+}
+
+.sizeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #f9e8d0;
+    cursor: pointer;
+    border: 1px solid #daae71;
+  }
+
+.sizeSlider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #f9e8d0;
+    border: 1px solid #daae71;
+    cursor: pointer;
+  }  
 
 .canvasContainer {
     display:grid;
     grid-template: repeat(20, 1fr) / repeat(20, 1fr);
     width: 600px;
     height: 600px;
-    border: 1px solid black;
+    border: 5px solid #daae71;
+    border-radius:3px;
 }
 
 .canvasSquares {
-    background-color:#F0F0D1;
+    background-color:#f9e8d0;
 }
 
 .red {
@@ -42,11 +94,45 @@
 .colors {
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
     width: 250px;
     padding: 30px;
 }
 
 .colors *{
     margin-bottom: 10px;
+}
+
+.currentSize {
+    text-align: center;
+}
+
+.choosePaintText {
+    text-align: center;
+}
+
+button {
+    background-color: #8da9c4;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    color: #2a2b2a;
+}
+
+button:hover {
+    border: 1px solid #c6ddf0;
+    padding: 4px;
+    border-radius: 5px;
+    background-color: #d1dae5;
+}
+
+button:active {
+    background-color: #8da9c4;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    color: #2a2b2a;
+}
+
+.active {
+    background-color: #d1dae5;
 }

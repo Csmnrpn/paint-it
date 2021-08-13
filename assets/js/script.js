@@ -66,6 +66,12 @@ sizeSlider.addEventListener('click', function(){
     currentSize.innerText = `${sizeSlider.value*sizeSlider.value} squares`;
     canvasSquares = document.querySelectorAll('.canvasSquares');
     paintItBlack();
+    blackColor.classList.add('active');
+    whiteColor.classList.remove('active');
+    winterColor.classList.remove('active');
+    autumnColor.classList.remove('active');
+    summerColor.classList.remove('active');
+    springColor.classList.remove('active');
 })
 
 clearButton.addEventListener('click', function(){
@@ -75,6 +81,12 @@ clearButton.addEventListener('click', function(){
 });
 
 springColor.addEventListener('click', function(){
+    springColor.classList.add('active');
+    whiteColor.classList.remove('active');
+    winterColor.classList.remove('active');
+    autumnColor.classList.remove('active');
+    summerColor.classList.remove('active');
+    blackColor.classList.remove('active');
     canvasSquares.forEach(square => {
         square.addEventListener ('mouseover', function(){
             square.style.backgroundColor = getRandomColor(springColorPalette);
@@ -82,6 +94,12 @@ springColor.addEventListener('click', function(){
 });
 
 summerColor.addEventListener('click', function(){
+    summerColor.classList.add('active');
+    whiteColor.classList.remove('active');
+    winterColor.classList.remove('active');
+    autumnColor.classList.remove('active');
+    blackColor.classList.remove('active');
+    springColor.classList.remove('active');
     canvasSquares.forEach(square => {
         square.addEventListener ('mouseover', function(){
             square.style.backgroundColor = getRandomColor(summerColorPalette);
@@ -89,6 +107,12 @@ summerColor.addEventListener('click', function(){
 });
 
 autumnColor.addEventListener('click', function(){
+    autumnColor.classList.add('active');
+    whiteColor.classList.remove('active');
+    winterColor.classList.remove('active');
+    blackColor.classList.remove('active');
+    summerColor.classList.remove('active');
+    springColor.classList.remove('active');
     canvasSquares.forEach(square => {
         square.addEventListener ('mouseover', function(){
             square.style.backgroundColor = getRandomColor(autumnColorPalette);
@@ -96,6 +120,12 @@ autumnColor.addEventListener('click', function(){
 });
 
 winterColor.addEventListener('click', function(){
+    winterColor.classList.add('active');
+    whiteColor.classList.remove('active');
+    blackColor.classList.remove('active');
+    autumnColor.classList.remove('active');
+    summerColor.classList.remove('active');
+    springColor.classList.remove('active');
     canvasSquares.forEach(square => {
         square.addEventListener ('mouseover', function(){
             square.style.backgroundColor = getRandomColor(winterColorPalette);
@@ -103,6 +133,12 @@ winterColor.addEventListener('click', function(){
 });
 
 blackColor.addEventListener('click', function(){
+    blackColor.classList.add('active');
+    whiteColor.classList.remove('active');
+    winterColor.classList.remove('active');
+    autumnColor.classList.remove('active');
+    summerColor.classList.remove('active');
+    springColor.classList.remove('active');
     canvasSquares.forEach(square => {
         square.addEventListener ('mouseover', function(){
             square.style.backgroundColor = 'black';}
@@ -110,7 +146,13 @@ blackColor.addEventListener('click', function(){
     })})
   
 whiteColor.addEventListener('click', function(){
+    whiteColor.classList.add('active');
+    blackColor.classList.remove('active');
+    winterColor.classList.remove('active');
+    autumnColor.classList.remove('active');
+    summerColor.classList.remove('active');
+    springColor.classList.remove('active');
     canvasSquares.forEach(square => {
         square.addEventListener ('mouseover', function(){
-            square.style.backgroundColor = '#F0F0D1';
-        })});});    
+            square.style.backgroundColor = '#f9e8d0';
+    })});});    
