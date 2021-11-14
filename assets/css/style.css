@@ -13,6 +13,7 @@ h1 {
     width: 100%;
     text-align: center;
 }
+
 .mainContainer {
     display:flex;
     flex-direction:row;
@@ -135,4 +136,14 @@ button:active {
 
 .active {
     background-color: #d1dae5;
+}
+
+.credits {
+    display:flex;
+    justify-content: center;
+}
+
+a {
+    margin-left: 20px;
+    color:black;
 }
